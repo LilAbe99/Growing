@@ -61,3 +61,7 @@ crashlytics-build.properties
 
 Senior Pro Tests/Senior Project Mechanic Tests/Library/*
 Senior Pro Tests/Senior Project Mechanic Tests/Temp/*
+Senior Pro Tests/Senior Project Mechanic Tests/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+Senior Pro Tests/Senior Project Mechanic Tests/Library/ScriptAssemblies/Assembly-CSharp.dll
+Senior Pro Tests/Senior Project Mechanic Tests/Library/SourceAssetDB
+Senior Pro Tests/Senior Project Mechanic Tests/Temp/__Backupscenes/0.backup
