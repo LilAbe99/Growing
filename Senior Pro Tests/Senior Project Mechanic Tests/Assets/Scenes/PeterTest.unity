@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791123471}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -984,7 +984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4404508155663596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1002,7 +1002,7 @@ GameObject:
   - component: {fileID: 4269597569226962}
   - component: {fileID: 20892548663122360}
   - component: {fileID: 81770897263856250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019896608020556}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4376443963090454}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 4127314479963076}
   - component: {fileID: 114209447953632166}
   - component: {fileID: 114924910171300746}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ModelRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 114778001479042416}
   - component: {fileID: 1290409802797699}
   - component: {fileID: 1290409802797700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4302634996166560}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 4059454056065764}
   - component: {fileID: 95355740450949886}
   - component: {fileID: 82476878246680574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CapGuy_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4160755528390916}
   - component: {fileID: 137561706665447804}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capguy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1174,7 +1174,7 @@ GameObject:
   - component: {fileID: 114198389604431016}
   - component: {fileID: 114758056527173776}
   - component: {fileID: 114230824392035552}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CameraControls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,7 +1190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4245574713326398}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4924972004903526}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spine_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 4109316509829272}
   - component: {fileID: 114983450065441190}
   - component: {fileID: 114545428731535522}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CameraRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1241,7 +1241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4209187083917916}
   - component: {fileID: 114190831984645366}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1257,7 +1257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4829322912931520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spine_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

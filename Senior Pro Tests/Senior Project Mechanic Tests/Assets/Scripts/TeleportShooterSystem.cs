@@ -31,7 +31,7 @@ public class TeleportShooterSystem : GameEventUserObject
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetButtonDown("Fire2"))
         {
             Instantiate(_teleportationProjectile, _firePoint.position, _camera.transform.rotation);
         }

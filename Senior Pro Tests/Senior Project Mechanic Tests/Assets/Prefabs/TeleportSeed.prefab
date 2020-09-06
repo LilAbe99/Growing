@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 206228215950182815}
   - component: {fileID: -119490193714717684}
   - component: {fileID: 8838892522183959199}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TeleportSeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
