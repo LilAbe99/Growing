@@ -4,13 +4,15 @@ using UnityEngine;
 using CMF;
 
 //For some reason the first grapple is different from the rest, this is a big issue that needs to be addressed
+//I also think we will need to switch to either a character joint or a configurable joint, as it seems a spring joint is just not cutting it and can be too random
 public class GrappleSystem : MonoBehaviour
 {
     [SerializeField] private LayerMask _raycastMask;
     [SerializeField] private Transform _firePoint;
     [SerializeField] private float _maxGrappleDistance;
     [SerializeField] private float _minGrappleTime;
-    [SerializeField] private float _grapplingMovementSpeed;
+    [SerializeField] private float _grapplingMovementForce;
+    [SerializeField] private float _airMovementForce;
 
     [Header("Velocity Adjustment")]
     [SerializeField] private float _launchMultiplier;
@@ -21,9 +23,13 @@ public class GrappleSystem : MonoBehaviour
     [Header("Spring Joint Adjustment")]
     [SerializeField] private float _maxDistance;
     [SerializeField] private float _minDistance;
+    [SerializeField] private float _tolerance;
     [SerializeField] private float _spring;
     [SerializeField] private float _damper;
     [SerializeField] private float _massScale;
+
+    [Header("Grounded Adjustment")]
+    [SerializeField] private float _intialYLaunchForce;
 
     private Camera _camera;
     private Rigidbody _rigidbody;
@@ -38,8 +44,7 @@ public class GrappleSystem : MonoBehaviour
 
     private SpringJoint _springJoint;
 
-    private Vector3 _momentum = Vector3.zero;
-
+    private bool _grappling = false;
     private bool _hasCollided = false;
     private bool _canGrapple = true;
     private bool _ignoreCollision = false;
@@ -84,7 +89,7 @@ public class GrappleSystem : MonoBehaviour
         Vector3 velocity = CalculateMovementDirection();
 
         //Multiply (normalized) velocity with movement speed;
-        velocity *= _grapplingMovementSpeed;
+        velocity *=  _grappling ? _grapplingMovementForce : _airMovementForce;
 
         return velocity;
     }
@@ -127,6 +132,13 @@ public class GrappleSystem : MonoBehaviour
 
         _gravitySystem.GravityScale = Constants.GRAPPLING_GRAVITY_SCALE;
 
+        _mover.CheckForGround();
+
+        if(_mover.IsGrounded())
+        {
+            _rigidbody.AddForce(Vector3.up * _intialYLaunchForce);
+        }
+
         InitializeSpringJoint();
         DrawLine();
     }
@@ -137,7 +149,7 @@ public class GrappleSystem : MonoBehaviour
 
         _gravitySystem.GravityScale = Constants.GRAPPLING_RELEASE_GRAVITY_SCALE;
 
-        RemoveSpringJoint();
+        RemoveSpringJoints();
         
         _rigidbody.velocity *= _launchMultiplier;
 
@@ -168,14 +180,21 @@ public class GrappleSystem : MonoBehaviour
         _springJoint.maxDistance = distanceFromPoint * _maxDistance;
         _springJoint.minDistance = distanceFromPoint * _minDistance;
 
+        _springJoint.tolerance = _tolerance;
         _springJoint.spring = _spring;
         _springJoint.damper = _damper;
         _springJoint.massScale = _massScale;
     }
 
-    private void RemoveSpringJoint()
+    private void RemoveSpringJoints()
     {
-        Destroy(_springJoint);
+        //May be overkill but ensures we get rid of all spring joints
+        SpringJoint[] joints = GetComponents<SpringJoint>();
+
+        foreach(SpringJoint joint in joints)
+        {
+            Destroy(joint);
+        }
     }
 
     private void DrawLine()
@@ -194,6 +213,7 @@ public class GrappleSystem : MonoBehaviour
         _hasCollided = false;
         _canGrapple = false;
         _ignoreCollision = true;
+        _grappling = true;
 
         StartGrapple();
 
@@ -217,6 +237,8 @@ public class GrappleSystem : MonoBehaviour
 
             yield return null;
         }
+
+        _grappling = false;
 
         StopGrapple();
 

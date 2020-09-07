@@ -482,7 +482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974868472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.62, y: 19.37, z: -10.48}
+  m_LocalPosition: {x: -27.5, y: 15, z: -6.9}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 997998350}
@@ -746,7 +746,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188296902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.94, y: 20.25, z: 7.03}
+  m_LocalPosition: {x: -15.5, y: 15, z: 7.2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 997998350}
@@ -1332,17 +1332,22 @@ MonoBehaviour:
     m_Bits: 256
   _firePoint: {fileID: 791123471}
   _maxGrappleDistance: 1000
-  _minGrappleTime: 0.1
-  _grapplingMovementSpeed: 5
+  _minGrappleTime: 0.2
+  _grapplingMovementForce: 10
+  _airMovementForce: 20
   _launchMultiplier: 1.2
   _minLaunchMagnitude: 20
   _maxLaunchMagnitude: 30
   _minStartingYVelocity: -2
-  _maxDistance: 0.7
-  _minDistance: 0.4
+  _maxDistance: 0.6
+  _minDistance: 0.6
+  _tolerance: 0
   _spring: 10
-  _damper: 10
+  _damper: 100
   _massScale: 6
+  _intialYLaunchForce: 500
+  _maxDistanceMultipler: 0.2
+  _minDistanceMultipler: 0.2
 --- !u!120 &1290409802797703
 LineRenderer:
   m_ObjectHideFlags: 0
