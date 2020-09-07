@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CustomGravitySystem : MonoBehaviour
 {
-    [SerializeField] private float _gravityScale = 1f;
+    public float GravityScale = 1f;
 
     private Rigidbody _rigidbody;
 
@@ -16,6 +16,6 @@ public class CustomGravitySystem : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody.AddForce(Constants.GLOBAL_GRAVITY * _gravityScale * Vector3.up * Time.fixedDeltaTime);
+        _rigidbody.AddForce(Constants.GLOBAL_GRAVITY * GravityScale * Vector3.up * Time.fixedDeltaTime);
     }
 }
